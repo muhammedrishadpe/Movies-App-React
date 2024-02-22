@@ -1,24 +1,36 @@
-import React, { createContext, useState, useEffect } from "react";
 
-export const AuthContext = createContext();
+import { createContext, useContext, useMemo } from "react";
+import { useNavigate } from "react-router-dom";
+import { useLocalStorage } from "../hooks/useLocalStorage";
+const AuthContext = createContext();
+
 export const AuthProvider = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [user, setUser] = useLocalStorage("user", null);
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const checkAuthStatus = () => {
-      const token = localStorage.getItem("token");
-      setIsAuthenticated(!!token); // Update the authentication status based on the presence of a token
-    };
+  // call this function when you want to authenticate the user
+  const login = async (data) => {
+    setUser(data);
+    navigate("/home");
+  };
 
-    checkAuthStatus();
-  }, []);
+  // call this function to sign out logged in user
+  const logout = () => {
+    setUser(null);
+    navigate("/", { replace: true });
+  };
 
-  return (
-    <AuthContext.Provider
-      value={{ isAuthenticated, setIsAuthenticated, loading, setLoading }}
-    >
-      {children}
-    </AuthContext.Provider>
+  const value = useMemo(
+    () => ({
+      user,
+      login,
+      logout,
+    }),
+    [user]
   );
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+};
+
+export const useAuth = () => {
+  return useContext(AuthContext);
 };

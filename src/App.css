@@ -1,0 +1,6 @@
+@import url(./styles//variables.css);
+body {
+    
+    background: var(--bg-dark);
+    color: white;
+}
