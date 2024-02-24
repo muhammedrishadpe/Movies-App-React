@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 
+import { useNavigate } from "react-router-dom";
 export const Signup = () => {
-  const { login } = useAuth();
+  const { signup } = useAuth();
+  
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -12,7 +15,8 @@ export const Signup = () => {
       return alert("Please check your paassword");
     }
     const userData = { email, password };
-    login(userData);
+    signup(userData);
+    alert("Successfully signed up. Now, login <3.")
   };
 
   return (

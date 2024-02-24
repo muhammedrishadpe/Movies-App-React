@@ -49,7 +49,7 @@ export const Login = () => {
 
         <p className="signup-p">
           New to Moovis?{" "}
-          <span onClick={() => navigate("Signup")}>Sign up now.</span>
+          <span onClick={() => navigate("signup")}>Sign up now.</span>
         </p>
       </div>
     </div>
