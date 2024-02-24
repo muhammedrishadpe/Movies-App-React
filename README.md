@@ -1,9 +1,17 @@
-# React + Vite
+Moovis App with React (Work in Progress)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the Movie App repository! This project is currently a work in progress. The Movie App is a React application designed to display a list of movies along with their details and images. To enhance user experience and ensure security, the app requires users to sign in. New users can easily sign up for an account, and their data will be securely stored using local storage. Additionally, the app utilizes protected routes to restrict unauthorized access to certain pages.
+Features
 
-Currently, two official plugins are available:
+    User Authentication: Users can sign in to access the app and view the list of movies.
+    User Registration: New users can easily sign up for an account.
+    Local Storage: User data is stored securely using local storage.
+    Protected Routes: Unauthorized users are redirected away from certain pages.
+    Sign Out Functionality: User data is removed from local storage upon signing out.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# Movies-App-React
+Technologies Used
+
+    React
+    Context API
+    Custom Hooks
+    Movie API Integration: Fetching movie data from an external 
