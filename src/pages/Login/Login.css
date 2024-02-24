@@ -1,0 +1,89 @@
+@import url(../../styles/variables.css);
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  height: 100vh;
+  background-image: url(../../assets/bg.jpg);
+}
+.login-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 3px;
+  max-width: 450px;
+  width: 100%;
+  height: 547px;
+  background: var(--bg-dark);
+}
+
+.login-form {
+  width: 314px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 20px;
+}
+
+.login-form h1 {
+  font-family: var(--prime-font);
+  font-weight: var(--font-weight-500);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+.login-form input {
+  height: 30px;
+  padding: 8px;
+  margin: 8px;
+  background: #333333;
+  color: var(--text-sec);
+  border: none;
+  border-radius: 3px;
+  font-family: var(--prime-font);
+  font-weight: var(--font-weight-500);
+}
+
+.login-form button {
+  height: 48px;
+  padding: 10px;
+  margin: 25px 6px 6px 6px;
+  background: #e50914;
+  box-shadow: 0px 1px 0px 0px #0000008c;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-family: var(--prime-font);
+  font-weight: var(--font-weight-500);
+}
+
+.login-form p {
+  margin: 4px;
+  color: var(--text-sec);
+  font-family: var(--prime-font);
+
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: right;
+  font-family: var(--prime-font);
+  font-weight: var(--font-weight-500);
+}
+
+.login-main .signup-p {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  justify-content: end;
+  color: var(--text-sec);
+}
+.login-main .signup-p span {
+  cursor: pointer;
+  color: white;
+}

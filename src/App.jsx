@@ -1,29 +1,23 @@
-
 import { Routes, Route } from "react-router-dom";
-import { Login } from "./components/authentication/Login/Login";
-import { Home } from "./components/Home/Home.jsx";
-
-import "./App.css";
+import { Home } from "./pages/Home/Home.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
-import { ProtectedRoute } from "./routes/ProtectedRoute.jsx";
-// import { Secret } from "./components/Secret/Secret.jsx";
-import './styles/variables.css'
+import { Login } from "./pages/Login/Login.jsx";
+import { Signup } from "./pages/Signup/Signup.jsx";
+import { ProtectedRoute } from "./components/ProtectedRoute.jsx";
+import "./App.css";
+import "./styles/variables.css";
 function App() {
   return (
     <AuthProvider>
-    <Routes>
-      <Route path="/" element={<Login />} />
-      {/* <Route path="/" element={<Home />} /> */}
-      <Route
-        path="/home"
-        element={
-          <ProtectedRoute>
-            <Home />
-          </ProtectedRoute>
-        }
-      />
-    </Routes>
-  </AuthProvider>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        
+         <Route element={<ProtectedRoute />}>
+          <Route path="/home" element={<Home />} />
+        </Route>
+      </Routes>
+    </AuthProvider>
   );
 }
 

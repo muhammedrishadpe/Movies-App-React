@@ -1,6 +1,6 @@
 import { useAuth } from "../../context/AuthContext";
 
-export const Secret = () => {
+export const Logout = () => {
   const { logout } = useAuth();
 
   const handleLogout = () => {
@@ -9,7 +9,6 @@ export const Secret = () => {
 
   return (
     <div>
-      <h1>This is a Secret page</h1>
       <button onClick={handleLogout}>Logout</button>
     </div>
   );

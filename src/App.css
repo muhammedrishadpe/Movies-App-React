@@ -1,6 +1,7 @@
 @import url(./styles//variables.css);
 body {
-    
-    background: var(--bg-dark);
-    color: white;
+  background: var(--bg-dark);
+  color: white;
+  font-family: var(--prime-font);
+  font-weight: var(--font-weight-500);
 }
