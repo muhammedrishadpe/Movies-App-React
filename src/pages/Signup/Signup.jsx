@@ -1,24 +1,19 @@
 import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
-
 import { useNavigate } from "react-router-dom";
 export const Signup = () => {
-  const { signup } = useAuth();
-  
+  const { login } = useAuth();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-
   const handleSignup = () => {
     if (password !== confirmPassword) {
       return alert("Please check your paassword");
     }
     const userData = { email, password };
-    signup(userData);
-    alert("Successfully signed up. Now, login <3.")
+    login(userData);
   };
-
   return (
     <div>
       <h2>Signup Page</h2>
