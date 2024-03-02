@@ -1,0 +1,7 @@
+.hover-page {
+  display: grid;
+}
+.hover-page .heart-img {
+  width: 30px;
+  height: 30px;
+}

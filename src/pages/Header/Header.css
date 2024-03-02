@@ -1,0 +1,11 @@
+.header-container
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.header-container div
+{
+    display: flex;
+    gap: 24px;
+}

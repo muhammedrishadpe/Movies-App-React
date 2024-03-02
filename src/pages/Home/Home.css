@@ -1,0 +1,35 @@
+.movies-container div {
+    display: flex;
+    flex-direction: column;
+}
+.movies-container div  img{
+    width: 130px;
+    height: 200px;
+}
+.movies-container div  h1{
+    font-size: 18px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    /* background-color: #2196F3; */
+    padding: 25px;
+  }
+  
+.grid-item {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  .hovered-item {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+  }

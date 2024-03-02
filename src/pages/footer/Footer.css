@@ -1,0 +1,14 @@
+.row {
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.grid-box {
+  width: 100%; 
+  padding-top: 20px;
+}
+
+.grid-box p {
+  padding-bottom: 10px;
+}

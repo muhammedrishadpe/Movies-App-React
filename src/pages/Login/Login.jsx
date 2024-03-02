@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
-
+import { Footer } from "../footer/Footer.jsx";
 export const Login = () => {
   const [email, setUsername] = useState("");
   const [password, setPassword] = useState("");
