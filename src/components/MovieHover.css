@@ -1,7 +1,40 @@
-.hover-page {
-  display: grid;
+.movie-details-container{
+  width: 130px;
+  height: 200px;
+  background-color:rgba(0, 0, 0, 0.729);
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  border-radius: 3px;
 }
+
 .hover-page .heart-img {
   width: 30px;
   height: 30px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease; 
 }
+.hover-page .heart-img:hover{
+  width: 30px;
+  height: 30px;
+  filter: invert(100%) sepia(100%) saturate(10000%) hue-rotate(0deg);
+  
+}
+
+.hover-page button {
+  padding: 7px;
+  border-radius: 3px;
+  background-color: red;
+  font-size: 12px;
+  border: none;
+}
+
+.hover-page button:hover {
+  padding: 7px;
+  border-radius: 3px;
+  background-color: rgb(189, 2, 2);
+  font-size: 12px;
+  border: none;
+}
+
+

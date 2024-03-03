@@ -5,7 +5,6 @@ import { MovieHover } from "../../components/MovieHover";
 export const Home = () => {
   const [moviesList, setMoviesList] = useState([]);
   const [hoveredIndex, setHoveredIndex] = useState(null);
-
   const handleHover = (index) => {
     setHoveredIndex(index);
   };
@@ -30,7 +29,7 @@ export const Home = () => {
             key={data.id}
           >
             {hoveredIndex === index ? (
-              <MovieHover />
+              <MovieHover overview={data.overview} />
             ) : (
               <img
                 src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`}
