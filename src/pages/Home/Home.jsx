@@ -23,7 +23,7 @@ export const Home = () => {
   }, []);
   const {darkMode} = useDarkMode();
   return (
-    <div className= {darkMode ? `movies-main container-dark` : `movies-main container-light`}>
+    <div className= {'movies-main '}>
       <div className="movies-container grid-container">
         {moviesList?.map((data, index) => (
           <div

@@ -1,7 +1,9 @@
+
 .movies-container div {
     display: flex;
     flex-direction: column;
 }
+
 .movies-container div  img{
     width: 130px;
     height: 200px;
