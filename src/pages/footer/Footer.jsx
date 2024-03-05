@@ -1,8 +1,10 @@
 import React from "react";
 import "../footer/Footer.css";
+import { useDarkMode } from "../../context/DarkModeContext";
 export const Footer = () => {
+  const {darkMode} = useDarkMode()
   return (
-      <div className="footer-container">
+      <div className= {darkMode ? "footer-container" :'footer-container footer-container-dark '} >
         <p>Questions? Call 1-844-505-2993</p>
         <div className="footer-items row">
           <div className="grid-box">
@@ -21,7 +23,10 @@ export const Footer = () => {
         <div className="grid-box">     <p>icons</p></div>
      
         </div>
-        <button>English</button>
+        <select>
+  <option value="English">English</option>
+  <option value="German">German</option>
+</select>
       </div>
   );
 };
