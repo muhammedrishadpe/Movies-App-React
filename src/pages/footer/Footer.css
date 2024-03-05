@@ -5,6 +5,7 @@
   color: #757575;
 
 }
+
 .footer-container-dark {
   background-color: white;
   color: #757575;
@@ -22,4 +23,17 @@
 
 .grid-box p {
   padding-bottom: 10px;
+}
+
+.select-button{
+  background: black;
+  color: #757575;
+  padding: 8px;
+  border: solid 1px #757575;
+}
+.select-button-dark{
+  background: white;
+  color: #757575;
+  padding: 8px;
+  border: solid 1px #757575;
 }

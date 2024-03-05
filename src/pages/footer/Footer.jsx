@@ -23,7 +23,7 @@ export const Footer = () => {
         <div className="grid-box">     <p>icons</p></div>
      
         </div>
-        <select>
+        <select className={darkMode ?  "select-button":"select-button-dark" }>
   <option value="English">English</option>
   <option value="German">German</option>
 </select>
