@@ -1,14 +1,14 @@
-.logout-container{
-}
 #logout-button{
-    
-    display: flex;
-    
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+display: flex; 
+justify-content: center;
+align-items: center;
+text-align: center;
 background-color: white;
 border-radius: 10px;
 border: none;
+padding: 6px;
+}
 
+.logout-container img{
+    margin-left: 5px;
 }
