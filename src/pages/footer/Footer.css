@@ -1,3 +1,9 @@
+.footer-container {
+  width: 100%;
+  padding: 25px;
+  background-color: black;
+
+}
 .row {
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr 1fr;

@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Logout } from "../Logout/Logout";
-import "../Home/Home.css";
 import { MovieHover } from "../../components/MovieHover";
+import {useDarkMode} from '../../context/DarkModeContext'
+import "../Home/Home.css";
 export const Home = () => {
   const [moviesList, setMoviesList] = useState([]);
   const [hoveredIndex, setHoveredIndex] = useState(null);
+
+
   const handleHover = (index) => {
     setHoveredIndex(index);
   };
@@ -18,8 +21,9 @@ export const Home = () => {
   useEffect(() => {
     getMovies();
   }, []);
+  const {darkMode} = useDarkMode();
   return (
-    <div className="movies-main">
+    <div className= {darkMode ? `movies-main container-dark` : `movies-main container-light`}>
       <div className="movies-container grid-container">
         {moviesList?.map((data, index) => (
           <div
@@ -29,7 +33,7 @@ export const Home = () => {
             key={data.id}
           >
             {hoveredIndex === index ? (
-              <MovieHover overview={data.overview} />
+              <MovieHover overview={data.overview} title={data.original_title} />
             ) : (
               <img
                 src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`}

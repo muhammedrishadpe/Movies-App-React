@@ -10,14 +10,15 @@ import "./styles/globel.css";
 import "./styles/variables.css";
 import { Footer } from "./pages/footer/Footer.jsx";
 import { Header } from "./pages/Header/Header.jsx";
+import { DarkModeProvider } from "./context/DarkModeContext.jsx";
 
 function App() {
   return (
     <AuthProvider>
-      <Header />
+    <DarkModeProvider >
+    <Header />
       <Routes>
-        <Route  path="/signup"  element={<Signup />} />
-        
+        <Route  path="/signup"  element={<Signup />} />  
         <Route element={<ProtectedRouteLogin />}>
         <Route path="/" element={<Login />} />
         </Route>
@@ -26,6 +27,7 @@ function App() {
         </Route>
       </Routes>
       <Footer />
+    </DarkModeProvider>
     </AuthProvider>
   );
 }

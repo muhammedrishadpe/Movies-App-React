@@ -2,7 +2,6 @@ import React from "react";
 import "../footer/Footer.css";
 export const Footer = () => {
   return (
-    <div>
       <div className="footer-container">
         <p>Questions? Call 1-844-505-2993</p>
         <div className="footer-items row">
@@ -24,6 +23,5 @@ export const Footer = () => {
         </div>
         <button>English</button>
       </div>
-    </div>
   );
 };
