@@ -14,7 +14,7 @@ export const Header = () => {
   return (
   <div className='header-container'>
        <h1>Moovis</h1>
-  <div><button style={{width:"50px",    background: 'transparent', color:darkMode ? "black" : "white", border:darkMode ? "solid 2px black" : "solid 2px white", }} onClick={handleClick}>{darkMode?"Light":"Dark"}</button>
+  <div><button style={{width:"50px",    background: 'transparent', color:darkMode ? "white" : "black", border:darkMode ? "solid 2px black" : "solid 2px white", }} onClick={handleClick}>{darkMode?"Light":"Dark"}</button>
   {user && <Logout />} </div>
   </div> )
 }
