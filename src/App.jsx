@@ -14,7 +14,7 @@ import { DarkModeProvider } from "./context/DarkModeContext.jsx";
 
 function App() {
   return (
-    <AuthProvider>
+     <AuthProvider>
     <DarkModeProvider >
     <Header />
       <Routes>

@@ -2,7 +2,10 @@ import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import "../../styles/globel.css";
+
 import { Footer } from "../footer/Footer.jsx";
+import { FormInput } from "../../components/FormInput.jsx";
 export const Login = () => {
   const [email, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -28,14 +31,15 @@ export const Login = () => {
       <div className="login-main">
         <form onSubmit={handleLogin} className="login-form">
           <h1>Sign In</h1>
-          <input
+
+          <FormInput
             id="username"
             type="text"
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <input
+          <FormInput
             id="password"
             type="password"
             placeholder="Enter your Password"
