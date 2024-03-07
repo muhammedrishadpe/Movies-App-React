@@ -15,7 +15,7 @@ export const Header = () => {
     <div className="header-container">
       <h1>Moovis</h1>
       <div>
-        <button
+        <button className="darkmode"
           style={{
             width: "50px",
             background: "transparent",
