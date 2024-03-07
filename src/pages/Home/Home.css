@@ -1,5 +1,8 @@
-.movies-main{
-  text-align: center;
+.movies-main {
+  min-height: 100vh;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
 }
 
 .movies-container div {
@@ -14,10 +17,12 @@
 .movies-container div h1 {
   font-size: 18px;
 }
-
+.search-container {
+  text-align: center;
+}
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto;
   padding: 50px;
   margin: 50px;
 }

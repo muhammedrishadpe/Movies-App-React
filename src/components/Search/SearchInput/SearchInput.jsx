@@ -1,10 +1,14 @@
 import React from 'react'
 
-export const SearchInput = () => {
+export const SearchInput = ({searchInputValue,
+    handleChange, clearSearch}) => {
   return (
    <div className="search-input-container">
-    <input type="text" placeholder='Search here' />
-    <button></button>
+    <input type="text" value={searchInputValue}
+        placeholder="Search here..."
+        onChange={handleChange}/>
+        
+    <button onClick={clearSearch}></button>
    </div>
   )
 }

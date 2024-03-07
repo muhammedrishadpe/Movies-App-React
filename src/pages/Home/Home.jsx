@@ -2,29 +2,53 @@ import React, { useContext, useEffect, useState } from "react";
 import { Logout } from "../Logout/Logout";
 import { MovieHover } from "../../components/MovieHover/MovieHover.jsx";
 import { useDarkMode } from "../../context/DarkModeContext";
-import "../Home/Home.css";
 import axios from "axios";
-import { Search } from "../../components/Search/Search.jsx";
+import { SearchInput } from "../../components/Search/SearchInput/SearchInput.jsx";
+import { Footer } from "../footer/Footer.jsx";
+import { Header } from "../Header/Header.jsx";
+import "../Home/Home.css";
 
 const API_URL =
-  "https://api.themoviedb.org/3/discover/movie?api_key=a1c453f07dc75f98d9fb4a3c4ee5abfc&language=en-US&page=1&include_adult=false";
+  "https://api.themoviedb.org/3/discover/movie";
 
 export const Home = () => {
   const [moviesList, setMoviesList] = useState([]);
-  const [error, setError] = useState(null);
+  const [filtermoviesList, setFilterMoviesList] = useState([]);
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [searchInputValue, setSearchInputValue] = useState("");
+
+  const handleChange = (event) => {
+    setSearchInputValue(event.target.value);
+    const newFilteredItems = moviesList.filter((data) => {
+      return data.title
+        .toLowerCase()
+        .includes(event.target.value.toLowerCase());
+    });
+
+    setFilterMoviesList(newFilteredItems);
+  };
   const handleHover = (index) => {
     setHoveredIndex(index);
   };
-  const getMovies = () => {
-    axios
-      .get(API_URL)
-      .then((response) => {
-        setMoviesList(response.data.results);
-      })
-      .catch((error) => {
-        setError(error);
-      });
+  const getMovies = async () => {
+    const response = await axios(API_URL, {
+      params: {
+        api_key:'a1c453f07dc75f98d9fb4a3c4ee5abfc',
+        language:'en-US',
+        page:'1',
+        include_adult:'false',
+        query: searchInputValue,
+      },
+    }).catch((error) => {
+      setError(error);
+    });
+    setMoviesList(response.data.results);
+    setFilterMoviesList(response.data.results);
+  };
+
+  const clearSearch = () => {
+    setSearchInputValue("");
+    setFilterMoviesList(moviesList);
   };
   useEffect(() => {
     getMovies();
@@ -32,9 +56,16 @@ export const Home = () => {
   const { darkMode } = useDarkMode();
   return (
     <div className={"movies-main "}>
-        <Search />
+      <Header />
+      <div className="search-container">
+        <SearchInput
+          searchInputValue={searchInputValue}
+          handleChange={handleChange}
+          clearSearch={clearSearch}
+        />
+      </div>
       <div className="movies-container grid-container">
-        {moviesList?.map((data, index) => (
+        {filtermoviesList?.map((data, index) => (
           <div
             onMouseEnter={() => handleHover(index)}
             onMouseLeave={() => handleHover(null)}
@@ -54,6 +85,7 @@ export const Home = () => {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

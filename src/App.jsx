@@ -16,7 +16,7 @@ function App() {
   return (
      <AuthProvider>
     <DarkModeProvider >
-    <Header />
+  
       <Routes>
         <Route  path="/signup"  element={<Signup />} />  
         <Route element={<ProtectedRouteLogin />}>
@@ -26,7 +26,6 @@ function App() {
           <Route path="/home" element={<Home />} />
         </Route>
       </Routes>
-      <Footer />
     </DarkModeProvider>
     </AuthProvider>
   );
