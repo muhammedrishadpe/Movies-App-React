@@ -5,12 +5,12 @@ import { Login } from "./pages/Login/Login.jsx";
 import { Signup } from "./pages/Signup/Signup.jsx";
 import { ProtectedRoute } from "./components/ProtectedRoute.jsx";
 import { ProtectedRouteLogin } from "./components/ProtectedRouteLogin.jsx";
-import "./App.css";
-import "./styles/globel.css";
-import "./styles/variables.css";
 import { Footer } from "./pages/footer/Footer.jsx";
 import { Header } from "./pages/Header/Header.jsx";
 import { DarkModeProvider } from "./context/DarkModeContext.jsx";
+import "./App.css";
+import "./styles/globel.css";
+import "./styles/variables.css";
 
 function App() {
   return (

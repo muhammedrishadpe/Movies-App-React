@@ -1,3 +1,7 @@
+.movies-main{
+  text-align: center;
+}
+
 .movies-container div {
   display: flex;
   flex-direction: column;

@@ -1,6 +1,6 @@
 import React from "react";
-import "../components/MovieHover.css";
-import fav from "../assets/heart.png";
+import "../MovieHover/MovieHover.css";
+import fav from "../../assets/heart.png";
 
 export const MovieHover = ({overview, title}) => {
   return (

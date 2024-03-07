@@ -1,35 +1,38 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Logout } from "../Logout/Logout";
-import { MovieHover } from "../../components/MovieHover";
-import {useDarkMode} from '../../context/DarkModeContext'
+import { MovieHover } from "../../components/MovieHover/MovieHover.jsx";
+import { useDarkMode } from "../../context/DarkModeContext";
 import "../Home/Home.css";
 import axios from "axios";
+import { Search } from "../../components/Search/Search.jsx";
 
-const API_URL = "https://api.themoviedb.org/3/discover/movie?api_key=a1c453f07dc75f98d9fb4a3c4ee5abfc&language=en-US&page=1&include_adult=false";
+const API_URL =
+  "https://api.themoviedb.org/3/discover/movie?api_key=a1c453f07dc75f98d9fb4a3c4ee5abfc&language=en-US&page=1&include_adult=false";
 
 export const Home = () => {
   const [moviesList, setMoviesList] = useState([]);
-  const [error,setError] = useState(null);
+  const [error, setError] = useState(null);
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const handleHover = (index) => {
     setHoveredIndex(index);
-  };  
+  };
   const getMovies = () => {
     axios
-    .get(API_URL)
-    .then((response) => {
-      setMoviesList(response.data.results);
-    })
-    .catch((error) => {
-      setError(error);
-    });
+      .get(API_URL)
+      .then((response) => {
+        setMoviesList(response.data.results);
+      })
+      .catch((error) => {
+        setError(error);
+      });
   };
   useEffect(() => {
     getMovies();
   }, []);
-  const {darkMode} = useDarkMode();
+  const { darkMode } = useDarkMode();
   return (
-    <div className= {'movies-main '}>
+    <div className={"movies-main "}>
+        <Search />
       <div className="movies-container grid-container">
         {moviesList?.map((data, index) => (
           <div
@@ -39,7 +42,10 @@ export const Home = () => {
             key={data.id}
           >
             {hoveredIndex === index ? (
-              <MovieHover overview={data.overview} title={data.original_title} />
+              <MovieHover
+                overview={data.overview}
+                title={data.original_title}
+              />
             ) : (
               <img
                 src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`}
