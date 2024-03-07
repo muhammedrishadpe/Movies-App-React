@@ -1,6 +1,8 @@
 :root {
-    --bg-dark: #000000BF;
-    --text-sec:#737373;
-    --prime-font: "Roboto", sans-serif;
-   --font-weight-500: 500;
+  --bg-dark: #000000bf;
+  --bg-light: white;
+  --bg-blue: blue;
+  --text-sec: #737373;
+  --prime-font: "Roboto", sans-serif;
+  --font-weight-500: 500;
 }

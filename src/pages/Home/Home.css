@@ -38,8 +38,8 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
+  background-color:var(--bg-dark);
+  color: var(--bg-light);
   padding: 10px;
   border-radius: 5px;
 }
@@ -48,7 +48,6 @@
   .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
-    /* background-color: #2196F3; */
     padding: 25px;
   }
 }
@@ -57,7 +56,6 @@
   .grid-container {
     display: grid;
     grid-template-columns: auto auto;
-    /* background-color: #2196F3; */
     padding: 25px;
   }
 }
@@ -66,7 +64,6 @@
   .grid-container {
     display: grid;
     grid-template-columns: auto;
-    /* background-color: #2196F3; */
     padding: 25px;
   }
 }

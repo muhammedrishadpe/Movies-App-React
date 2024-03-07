@@ -1,33 +1,30 @@
-.movie-details-container{
+.movie-details-container {
   width: 120px;
   height: 190px;
-  background-color:rgba(0, 0, 0, 0.729);
+  background-color: var(--bg-dark);
   display: flex;
   justify-content: space-between;
   text-align: left;
   padding: 5px;
   border-radius: 3px;
-  box-sizing: content-box ;
+  box-sizing: content-box;
   overflow: hidden;
 }
-
 .content-container {
   height: 80%;
-  overflow:hidden;
+  overflow: hidden;
 }
 .hover-page .heart-img {
   width: 30px;
   height: 30px;
   filter: brightness(0) invert(1);
-  transition: filter 0.3s ease; 
+  transition: filter 0.3s ease;
 }
-.hover-page .heart-img:hover{
+.hover-page .heart-img:hover {
   width: 30px;
   height: 30px;
   filter: invert(100%) sepia(100%) saturate(10000%) hue-rotate(0deg);
-  
 }
-
 .hover-page button {
   padding: 7px;
   border-radius: 3px;
@@ -36,7 +33,6 @@
   border: none;
   margin-right: 20px;
 }
-
 .hover-page button:hover {
   padding: 7px;
   border-radius: 3px;
@@ -44,5 +40,3 @@
   font-size: 12px;
   border: none;
 }
-
-

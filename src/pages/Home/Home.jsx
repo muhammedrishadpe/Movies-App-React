@@ -1,21 +1,20 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Logout } from "../Logout/Logout";
+import axios from "axios";
 import { MovieHover } from "../../components/MovieHover/MovieHover.jsx";
 import { useDarkMode } from "../../context/DarkModeContext";
-import axios from "axios";
 import { SearchInput } from "../../components/Search/SearchInput/SearchInput.jsx";
 import { Footer } from "../footer/Footer.jsx";
 import { Header } from "../Header/Header.jsx";
 import "../Home/Home.css";
 
-const API_URL =
-  "https://api.themoviedb.org/3/discover/movie";
+const API_URL = "https://api.themoviedb.org/3/discover/movie";
 
 export const Home = () => {
   const [moviesList, setMoviesList] = useState([]);
   const [filtermoviesList, setFilterMoviesList] = useState([]);
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [searchInputValue, setSearchInputValue] = useState("");
+  const { darkMode } = useDarkMode();
 
   const handleChange = (event) => {
     setSearchInputValue(event.target.value);
@@ -33,10 +32,10 @@ export const Home = () => {
   const getMovies = async () => {
     const response = await axios(API_URL, {
       params: {
-        api_key:'a1c453f07dc75f98d9fb4a3c4ee5abfc',
-        language:'en-US',
-        page:'1',
-        include_adult:'false',
+        api_key: "a1c453f07dc75f98d9fb4a3c4ee5abfc",
+        language: "en-US",
+        page: "1",
+        include_adult: "false",
         query: searchInputValue,
       },
     }).catch((error) => {
@@ -53,9 +52,11 @@ export const Home = () => {
   useEffect(() => {
     getMovies();
   }, []);
-  const { darkMode } = useDarkMode();
   return (
-    <div className={"movies-main "}>
+    <div
+      style={{ backgroundColor: darkMode ? "black" : "white" }}
+      className={"movies-main "}
+    >
       <Header />
       <div className="search-container">
         <SearchInput

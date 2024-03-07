@@ -20,23 +20,14 @@ body {
 
 #root {
   width: 100%;
-  min-height: 100vh;  
+  min-height: 100vh;
   justify-content: center;
-background-image: url(../assets/bg.jpg);
+  /* background-image: url(../assets/bg.jpg); */
 }
-/* 
-#root > div {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
-} */
-.container-dark{
+.container-dark {
   background-color: black;
 }
 
-.container-light{
+.container-light {
   background-color: rgba(216, 216, 216, 0.326);
 }
-
