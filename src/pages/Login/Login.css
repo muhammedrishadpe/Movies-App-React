@@ -3,11 +3,12 @@
 .login-page {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 100vh;
   background-color: var(--bg-light);
-  padding-bottom:18px
+  padding:27px
+
 }
 
 .login-page-dark {
