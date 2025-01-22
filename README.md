@@ -1,4 +1,4 @@
-# Moovis App with React (Work in Progress)
+# Moovis App with React 
 
 Welcome to the Movie App repository! This project is currently a work in progress. The Movie App is a React application designed to display a list of movies along with their details and images. To enhance user experience and ensure security, the app requires users to sign in. New users can easily sign up for an account, and their data will be securely stored using local storage. Additionally, the app utilizes protected routes to restrict unauthorized access to certain pages.
 
